@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+void merge(vector<int>& arr1, vector<int>& arr2, int m, int n) {
+    int i = m - 1, j = 0;
+    while (i >= 0 && j < n) {
+        if (arr1[i] > arr2[j]) {
+            swap(arr1[i], arr2[j]);
+        }
+        i--;
+        j++;
+    }
+    sort(arr1.begin(), arr1.end());
+    sort(arr2.begin(), arr2.end());
+}
